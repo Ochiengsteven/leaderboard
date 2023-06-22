@@ -63,6 +63,7 @@ form {
   width: 40%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-width: 2px 5px 6px 2px;
+  cursor: pointer;
 }
 
 input {
@@ -79,4 +80,5 @@ input {
 .submit {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-width: 2px 5px 6px 2px;
+  cursor: pointer;
 }
