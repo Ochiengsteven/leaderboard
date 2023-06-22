@@ -1,17 +1,82 @@
+* {
+    margin: 0;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
 h1 {
-    color: black;
+  color: black;
 }
 
 .score-board {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  width: 100%;
 }
 
-/* table {
-    display: flex;
+.table {
+  border-collapse: collapse;
+  height: 30%;
+  width: 100%;
+}
+
+.table tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+.table tr:nth-child(odd) {
+  background-color: white;
+}
+
+.table td {
+  border: 2px solid black;
+  padding: 5px;
+  width: 60%;
+}
+
+.scores-list {
+  width: 35%;
+
+  /* padding-top: 5px; */
+}
+
+.title {
+  padding: 5px;
+  display:flex;
+}
+
+/* input styles */
+.add-score{
+    width: 40%;
+}
+
+.add-score,
+form {
+    display:flex;
     flex-direction: column;
-    border-collapse: collapse;
-    width: 100%;
-} */
+}
+
+.title button {
+    margin-left: 10px;
+    width: 40%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-width: 2px 5px 6px 2px;
+}
+
+input {
+  margin: 2%;
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.submit-btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.submit {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  border-width: 2px 5px 6px 2px;
+}
