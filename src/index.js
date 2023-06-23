@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
     const data = await response.json();
-    console.log(data);
     form.reset();
   };
 
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const getScores = async () => {
     const response = await fetch(requestURL);
     const scores = await response.json();
-    // console.log(scores);
     display(scores.result);
   };
 
