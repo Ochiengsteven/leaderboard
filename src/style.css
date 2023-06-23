@@ -2,6 +2,7 @@
   margin: 0;
   padding: 2%;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -18,12 +19,17 @@ h1 {
 
 .table {
   border-collapse: collapse;
+  margin: 2% 0;
+  font-size: 0.9em;
   height: 30%;
   width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .even {
-  background-color: lightgrey;
+  background-color: #f3f3f3;
 }
 
 .odd {
@@ -31,23 +37,75 @@ h1 {
 }
 
 .table td {
-  border: 2px solid black;
   padding: 5px;
   width: 60%;
+  padding: 12px 15px;
+}
+
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tr:hover {
+  background-color: #009879;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.1) translateX(3%);
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .scores-list {
   width: 35%;
-
-  /* padding-top: 5px; */
 }
 
 .title {
   padding: 5px;
   display: flex;
+  color: #009879;
 }
 
 /* input styles */
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.input-box input {
+  margin: 2%;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px 10px 10px 5px;
+  border: 1px solid #f2f2f2;
+  background: rgba(0,152,121, 0.1);
+  outline: none;
+  color: rgb(56, 55, 55);
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.input-box span {
+  position: absolute;
+  left: 4%;
+  top: 25%;
+  padding: 10px 10px 10px 5px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(56, 55, 55, 0.5);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span {
+  top: -5%;
+  left: 4%;
+  font-size: 0.8em;
+  color: #009879;
+  background: white;
+  padding: 0 5px;
+}
+
 .add-score {
   width: 40%;
 }
@@ -58,27 +116,37 @@ form {
   flex-direction: column;
 }
 
-.title button {
-  margin-left: 10px;
-  width: 40%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-width: 2px 5px 6px 2px;
-  cursor: pointer;
+.title button,
+.submit {
+  /* Button properties */
+  background-color: #009879;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50px; /* Makes the button oval */
+
+  /* Glow effect */
+  box-shadow: 0 0 10px #009879;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-input {
-  margin: 2%;
-  border-width: 1px;
-  border-radius: 3px;
+.title button:hover,
+.submit:hover {
+  box-shadow: 0 0 20px #009879;
 }
 
 .submit-btn {
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
+  /* justify-content: center; */
 }
 
-.submit {
+/* .submit {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-width: 2px 5px 6px 2px;
   cursor: pointer;
-}
+} */

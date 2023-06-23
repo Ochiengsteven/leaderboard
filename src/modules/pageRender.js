@@ -19,8 +19,14 @@ export default function renderPage() {
   addScore.classList.add('add-score');
   addScore.innerHTML = `<div class="title"><h3>Add your score</h3></div>
                       <form class="form">
-                        <input type="text" placeholder="Your name" class="name" id="name-input" required>
-                        <input type="number" placeholder="Your score" class="score" id="value-input" required>
+                        <div class="input-box">
+                          <input type="text" class="name" id="name-input" required>
+                          <span>Your name</span>
+                        </div>
+                        <div class="input-box">
+                          <input type="number" class="score" id="value-input" required>
+                          <span>Your score</span>
+                        </div>
                         <div class="submit-btn"><button type="submit" class="submit">Submit</button></div>
                       </form>`;
   scoreBoard.appendChild(addScore);
