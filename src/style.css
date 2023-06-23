@@ -22,11 +22,11 @@ h1 {
   width: 100%;
 }
 
-.table tr:nth-child(even) {
+.even {
   background-color: lightgrey;
 }
 
-.table tr:nth-child(odd) {
+.odd {
   background-color: white;
 }
 
