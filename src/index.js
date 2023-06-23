@@ -49,4 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
     table.appendChild(tbody);
     scoresTable.appendChild(table);
   };
+
+  // get stored scores from the API
+  const getScores = async () => {
+    const response = await fetch(requestURL);
+    const scores = await response.json();
+    display(scores.result);
+  };
+
+  getScores();
+
+  function createScoreFromInputs() {
+    const inputName = document.getElementById('name-input').value;
+    const inputValue = document.getElementById('value-input').value;
+    createScore(inputName, inputValue);
+  }
 });
