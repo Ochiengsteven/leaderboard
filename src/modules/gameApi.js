@@ -1,4 +1,26 @@
 // eslint-disable-next-line no-unused-vars
+const gameID = 'dB9kTdIB86xI5HWMv3yV';
+const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const requestURL = `${baseURL}games/${gameID}/scores/`;
+
+const form = document.querySelector('form');
+
+// POST scores to the API
+const createScore = async (inputName, inputValue) => {
+  const response = await fetch(requestURL, {
+    method: 'POST',
+    body: JSON.stringify({
+      user: inputName,
+      score: inputValue,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = await response.json();
+  form.reset();
+};
+
 const display = (scores) => {
   const scoresTable = document.getElementById('score-table');
   scoresTable.innerHTML = '';
@@ -19,3 +41,36 @@ const display = (scores) => {
   table.appendChild(tbody);
   scoresTable.appendChild(table);
 };
+
+// get stored scores from the API
+const getScores = async () => {
+  const response = await fetch(requestURL);
+  const scores = await response.json();
+  display(scores.result);
+};
+
+getScores();
+
+function createScoreFromInputs() {
+  const inputName = document.getElementById('name-input').value;
+  const inputValue = document.getElementById('value-input').value;
+  createScore(inputName, inputValue);
+}
+
+function handleKeyPress(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    createScoreFromInputs();
+  }
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  createScoreFromInputs();
+}
+
+form.addEventListener('keydown', handleKeyPress);
+form.addEventListener('submit', handleSubmit);
+
+const refreshBtn = document.getElementById('page-refresh');
+refreshBtn.addEventListener('click', () => getScores());
