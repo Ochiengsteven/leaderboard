@@ -64,4 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputValue = document.getElementById('value-input').value;
     createScore(inputName, inputValue);
   }
+
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      createScoreFromInputs();
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    createScoreFromInputs();
+  }
+
+  form.addEventListener('keydown', handleKeyPress);
+  form.addEventListener('submit', handleSubmit);
+
+  const refreshBtn = document.getElementById('page-refresh');
+  refreshBtn.addEventListener('click', () => getScores());
 });
