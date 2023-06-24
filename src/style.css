@@ -3,10 +3,15 @@
   padding: 2%;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: #333;
 }
 
 h1 {
-  color: black;
+  color: #fff;
 }
 
 .score-board {
@@ -25,15 +30,15 @@ h1 {
   width: 100%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 152, 121, 0.2);
 }
 
 .even {
-  background-color: #f3f3f3;
+  background-color: #444;
 }
 
 .odd {
-  background-color: white;
+  background-color: #555;
 }
 
 .table td {
@@ -48,11 +53,12 @@ tr {
 
 tr:hover {
   background-color: #009879;
-  color: white;
+  color: #fff;
   cursor: pointer;
   transform: scale(1.1) translateX(3%);
   transition: all 0.5s ease-in-out;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 152, 121, 0.2);
 }
 
 .scores-list {
@@ -77,7 +83,7 @@ tr:hover {
   border-radius: 5px;
   padding: 10px 10px 10px 5px;
   border: 1px solid #f2f2f2;
-  background: rgba(0,152,121, 0.1);
+  background: rgba(0, 152, 121, 0.1);
   outline: none;
   color: rgb(56, 55, 55);
   font-size: 1em;
@@ -91,8 +97,9 @@ tr:hover {
   padding: 10px 10px 10px 5px;
   pointer-events: none;
   font-size: 1em;
-  color: rgba(56, 55, 55, 0.5);
+  color: rgba(223, 220, 220, 0.5);
   text-transform: uppercase;
+  background: transparent;
   transition: 0.5s;
 }
 
@@ -102,7 +109,7 @@ tr:hover {
   left: 4%;
   font-size: 0.8em;
   color: #009879;
-  background: white;
+  background: transparent;
   padding: 0 5px;
 }
 
@@ -144,9 +151,3 @@ form {
   align-items: center;
   /* justify-content: center; */
 }
-
-/* .submit {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  border-width: 2px 5px 6px 2px;
-  cursor: pointer;
-} */
